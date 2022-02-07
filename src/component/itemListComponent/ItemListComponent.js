@@ -18,20 +18,17 @@ const ItemListComponent = () => {
 
 
     return(     
-    <div className="cardList">
-     {if (spinner === true) {
-        return( <Spinner/> );
-    }
-    else {
-        users.map((user) => {
-            return(
-            <div key = {user.id}>
-               <ItemComponent data = {user} />
-           </div>
-           );
-           })};
-           
-    </div>
+        <div className="cardList">
+        {spinner ? <Spinner />
+        : users.map((user) => {
+            return (
+              <div key={user.id}>
+                <ItemComponent data={user} />
+              </div>
+            );
+          })
+        }
+      </div>
   );
    
 };
